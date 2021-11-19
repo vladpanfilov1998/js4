@@ -11,8 +11,8 @@ function plusArray(arg1, arg2) {
 //- створити функцію  яка приймає два масиви та скаладає значення елементів з однаковими індексами  та повертає новий результуючий масив.
 //    EXAMPLE:
 
-let arr1 = [1,2,3,4];
-let arr2 = [2,3,4,5];
+let arr1 = [1, 2, 3, 4];
+let arr2 = [2, 3, 4, 5];
 let arr3 = [];
 
 //    [3,5,7,9]
@@ -29,22 +29,29 @@ function sumArray(array1, array2) {
 //EXAMPLE:
 //    [{name: 'Dima', age: 13}, {model: 'Camry'}]  ===> [ name, age, model ]
 
-function sumArray(array) {
+function randArray(array) {
     let newArray = [];
-    for (let key of Object.keys(array)) {
-        newArray.push(key);
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        for (const key in element) {
+            newArray.push(key);
+        }
     }
     return newArray;
 }
+
 
 //    - Створити функцію яка приймає масив будь яких объектів, та повертає масив значень всіх обєктів
 //EXAMPLE:
 //    [{name: 'Dima', age: 13}, {model: 'Camry'}]  ===> [ Dima, 13, Camry ]
 
-function randArray(array) {
-    let newArray = [];
-    for (let value of Object.values(array)) {
-        newArray.push(value);
+    function randArray(array) {
+        let newArray = [];
+        for (let i = 0; i < array.length; i++) {
+            const element = array[i];
+            for (const value in element) {
+                newArray.push(value);
+            }
+        }
+        return newArray;
     }
-    return newArray;
-}
